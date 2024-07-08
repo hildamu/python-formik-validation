@@ -4,9 +4,7 @@ import * as yup from "yup";
 export const SignupForm = () => {
   const [customers, setCustomers] = useState([{}]);
   const [refreshPage, setRefreshPage] = useState(false);
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-
+  
   useEffect(() => {
     console.log("FETCH! ");
     fetch("/customers")
@@ -53,7 +51,6 @@ export const SignupForm = () => {
 
   return (
     <div>
-      <h1>Customer sign up form</h1>
       <form onSubmit={formik.handleSubmit} style={{ margin: "30px" }}>
         <label htmlFor="email">Email Address</label>
         <br />
